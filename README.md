@@ -2,7 +2,10 @@
 
 ## Project info
 
-**URL**: hananasif.lovable.app
+**URL**: https://hananasif.lovable.app
+
+## My Resume
+
 
 ## What technologies are used for this project?
 

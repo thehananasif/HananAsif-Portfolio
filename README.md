@@ -5,7 +5,7 @@
 **URL**: https://hananasif.lovable.app
 
 ## My Resume
-
+https://github.com/thehananasif/HananAsif-Portfolio/blob/main/Hanan%20Asif%20Resume.pdf
 
 ## What technologies are used for this project?
 

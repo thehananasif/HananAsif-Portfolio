@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -102,14 +101,16 @@
     color: transparent;
   }
 
-  /* Heading text effects as requested */
+  /* Updated Heading text effects with Apple-inspired design */
   .portfolio-heading {
     @apply font-heading font-semibold tracking-wider relative;
-    background: linear-gradient(to bottom, #A68DFF, #FFFFFF);
+    background: linear-gradient(to bottom, #8A63D2, #FFFFFF);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'San Francisco', 'Helvetica Neue', sans-serif;
+    letter-spacing: -0.02em;
   }
 
   .portfolio-heading::before {
@@ -119,8 +120,8 @@
     left: 50%;
     width: 100%;
     height: 100%;
-    background: rgba(125, 91, 176, 0.3);
-    filter: blur(10px);
+    background: rgba(138, 99, 210, 0.2);
+    filter: blur(8px);
     transform: translate(-50%, -50%);
     z-index: -1;
   }
@@ -130,9 +131,9 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, rgba(125, 91, 176, 0.3), transparent);
+    width: 110%;
+    height: 110%;
+    background: radial-gradient(ellipse at center, rgba(138, 99, 210, 0.15), transparent 70%);
     transform: translate(-50%, -50%);
     z-index: -2;
   }
@@ -238,4 +239,33 @@
 
 .hover-shadow-effect:hover {
   box-shadow: 0 10px 25px rgba(110, 89, 165, 0.2);
+}
+
+/* Add Apple-specific text animation */
+@keyframes subtle-shine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.apple-text-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.apple-text-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.08) 50%, 
+    transparent 100%);
+  animation: subtle-shine 4s ease-in-out infinite;
 }

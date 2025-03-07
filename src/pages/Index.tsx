@@ -252,7 +252,7 @@ const Index = () => {
                 text=""
                 className="mb-8"
               >
-                <h1 className="portfolio-heading text-5xl md:text-7xl mb-2 animate-text-reveal" style={{ animationDelay: '0.2s' }}>
+                <h1 className="portfolio-heading apple-text-shine text-5xl md:text-7xl mb-2 animate-text-reveal" style={{ animationDelay: '0.2s' }}>
                   <span className="text-portfolio-light-purple">Hanan</span> Asif
                 </h1>
               </FloatingText>
@@ -278,7 +278,7 @@ const Index = () => {
           <section id="about" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
-                <h2 className="portfolio-heading text-3xl md:text-4xl mb-12 text-center animate-text-reveal" style={{ animationDelay: '0.1s' }}>
+                <h2 className="portfolio-heading apple-text-shine text-3xl md:text-4xl mb-12 text-center animate-text-reveal" style={{ animationDelay: '0.1s' }}>
                   About <span className="text-portfolio-light-purple">Me</span>
                 </h2>
                 
@@ -308,7 +308,7 @@ const Index = () => {
           {/* Skills Section */}
           <section id="skills" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
-              <h2 className="portfolio-heading text-3xl md:text-4xl mb-12 text-center animate-text-reveal" style={{ animationDelay: '0.1s' }}>
+              <h2 className="portfolio-heading apple-text-shine text-3xl md:text-4xl mb-12 text-center animate-text-reveal" style={{ animationDelay: '0.1s' }}>
                 My <span className="text-portfolio-light-purple">Skills</span>
               </h2>
               
@@ -321,7 +321,7 @@ const Index = () => {
           {/* Experience Section */}
           <section id="experience" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
-              <h2 className="portfolio-heading text-3xl md:text-4xl mb-12 text-center animate-text-reveal" style={{ animationDelay: '0.1s' }}>
+              <h2 className="portfolio-heading apple-text-shine text-3xl md:text-4xl mb-12 text-center animate-text-reveal" style={{ animationDelay: '0.1s' }}>
                 Work <span className="text-portfolio-light-purple">Experience</span>
               </h2>
               
@@ -334,7 +334,7 @@ const Index = () => {
           {/* Projects Section */}
           <section id="projects" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
-              <h2 className="portfolio-heading text-3xl md:text-4xl mb-12 text-center animate-text-reveal" style={{ animationDelay: '0.1s' }}>
+              <h2 className="portfolio-heading apple-text-shine text-3xl md:text-4xl mb-12 text-center animate-text-reveal" style={{ animationDelay: '0.1s' }}>
                 Featured <span className="text-portfolio-light-purple">Projects</span>
               </h2>
               
@@ -351,7 +351,7 @@ const Index = () => {
           {/* Certifications Section */}
           <section id="certifications" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
-              <h2 className="portfolio-heading text-3xl md:text-4xl mb-12 text-center animate-text-reveal" style={{ animationDelay: '0.1s' }}>
+              <h2 className="portfolio-heading apple-text-shine text-3xl md:text-4xl mb-12 text-center animate-text-reveal" style={{ animationDelay: '0.1s' }}>
                 <span className="text-portfolio-light-purple">Certifications</span>
               </h2>
               
@@ -368,7 +368,7 @@ const Index = () => {
           {/* Contact Section */}
           <section id="contact" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
-              <h2 className="portfolio-heading text-3xl md:text-4xl mb-12 text-center animate-text-reveal" style={{ animationDelay: '0.1s' }}>
+              <h2 className="portfolio-heading apple-text-shine text-3xl md:text-4xl mb-12 text-center animate-text-reveal" style={{ animationDelay: '0.1s' }}>
                 Get In <span className="text-portfolio-light-purple">Touch</span>
               </h2>
               

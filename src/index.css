@@ -60,6 +60,84 @@
 
 /* Custom classes */
 @layer components {
+  /* Button styling as requested */
+  .portfolio-button {
+    @apply bg-[#5A3E85] text-white font-semibold px-8 py-3 rounded-lg relative overflow-hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 rgba(123, 81, 176, 0);
+    border: 1px solid transparent;
+  }
+
+  .portfolio-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: all 0.6s ease;
+    z-index: 1;
+  }
+
+  .portfolio-button:hover {
+    box-shadow: 0 0 12px rgba(123, 81, 176, 0.5);
+    border: 1px solid #7D5BB0;
+  }
+
+  .portfolio-button:hover::before {
+    left: 100%;
+  }
+
+  .portfolio-button:active {
+    transform: scale(0.98);
+  }
+  
+  .portfolio-button span {
+    @apply relative z-10;
+    background: linear-gradient(to bottom, #A68DFF, #FFFFFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Heading text effects as requested */
+  .portfolio-heading {
+    @apply font-heading font-semibold tracking-wider relative;
+    background: linear-gradient(to bottom, #A68DFF, #FFFFFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+  }
+
+  .portfolio-heading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(125, 91, 176, 0.3);
+    filter: blur(10px);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+  }
+
+  .portfolio-heading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(125, 91, 176, 0.3), transparent);
+    transform: translate(-50%, -50%);
+    z-index: -2;
+  }
+
+  /* Keep existing classes */
   .card-3d {
     @apply rounded-lg bg-portfolio-purple/10 backdrop-blur-sm border border-portfolio-purple/20 shadow-xl transition-all duration-300 hover:shadow-portfolio-purple/10 hover:scale-105 overflow-hidden;
     transform-style: preserve-3d;
@@ -124,6 +202,24 @@
 
 .animate-rotate-slow {
   animation: rotate-slow 10s linear infinite;
+}
+
+/* Animation for text reveal - iPhone style */
+@keyframes text-reveal {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+.animate-text-reveal {
+  animation: text-reveal 0.8s forwards;
 }
 
 /* Micro-interactions */

@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -44,8 +44,12 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-portfolio-dark-purple text-foreground;
+    @apply bg-black text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -71,17 +75,17 @@
   }
 
   .skill-card {
-    @apply bg-portfolio-dark-gray/60 rounded-lg p-4 text-center transition-all duration-300 transform hover:scale-105 backdrop-blur-sm;
+    @apply bg-portfolio-dark-gray/60 rounded-lg p-4 text-center transition-all duration-300 transform hover:scale-105 backdrop-blur-sm border border-portfolio-purple/20;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
   }
 
   .project-card {
-    @apply bg-gradient-to-br from-portfolio-dark-gray to-portfolio-dark-purple rounded-lg overflow-hidden relative transition-all duration-500 transform hover:scale-105;
+    @apply bg-black rounded-lg overflow-hidden relative transition-all duration-500 transform hover:scale-105 border border-portfolio-purple/20;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
   }
 
   .certification-card {
-    @apply bg-portfolio-dark-gray/60 rounded-lg p-6 text-center transition-all duration-300 transform hover:translate-y-[-10px] backdrop-blur-sm;
+    @apply bg-black rounded-lg p-6 text-center transition-all duration-300 transform hover:translate-y-[-10px] backdrop-blur-sm border border-portfolio-purple/20;
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
   }
 
@@ -106,4 +110,36 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+}
+
+/* Animations */
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 10s linear infinite;
+}
+
+/* Micro-interactions */
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.hover-shadow-effect {
+  @apply transition-all duration-300;
+}
+
+.hover-shadow-effect:hover {
+  box-shadow: 0 10px 25px rgba(110, 89, 165, 0.2);
 }

@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Briefcase, Code, Mail, UserRound, Award, Laptop, Globe, Camera } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Preloader from '@/components/Preloader';
@@ -14,6 +14,8 @@ import ContactForm from '@/components/ContactForm';
 
 const Index = () => {
   const [loading, setLoading] = useState(true);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const pageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Simulate loading time
@@ -30,7 +32,22 @@ const Index = () => {
       metaDescription.setAttribute('content', 'Explore the 3D portfolio of Hanan Asif, showcasing expertise in social media management, content creation, digital marketing, and web development.');
     }
     
-    return () => clearTimeout(timer);
+    // Scroll progress tracking
+    const handleScroll = () => {
+      if (!pageRef.current) return;
+      
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.offsetHeight - window.innerHeight;
+      const scrollPercent = scrollTop / docHeight;
+      setScrollProgress(scrollPercent);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   // Define all our navigation sections
@@ -209,8 +226,14 @@ const Index = () => {
   ];
 
   return (
-    <>
+    <div ref={pageRef} className="font-sans">
       <Preloader loading={loading} />
+      
+      {/* Scroll Progress Indicator */}
+      <div 
+        className="fixed top-0 left-0 h-1 bg-portfolio-light-purple z-50 transition-all duration-300"
+        style={{ width: `${scrollProgress * 100}%` }}
+      />
       
       {!loading && (
         <>
@@ -221,7 +244,7 @@ const Index = () => {
           <section id="welcome" className="min-h-screen relative flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 z-0">
               {/* Background video would go here */}
-              <div className="absolute inset-0 bg-portfolio-dark-purple bg-opacity-70"></div>
+              <div className="absolute inset-0 bg-black bg-opacity-90"></div>
             </div>
             
             <div className="container mx-auto px-4 z-10 text-center">
@@ -243,7 +266,7 @@ const Index = () => {
               <div className="opacity-0 animate-fade-in" style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
                 <button 
                   onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-portfolio-purple hover:bg-portfolio-light-purple text-white px-8 py-3 rounded-lg transition-colors duration-300 font-medium"
+                  className="bg-portfolio-purple hover:bg-portfolio-light-purple text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-medium"
                 >
                   Explore My Work
                 </button>
@@ -252,7 +275,7 @@ const Index = () => {
           </section>
           
           {/* About Section */}
-          <section id="about" className="py-24 relative bg-gradient-to-b from-portfolio-dark-purple to-portfolio-dark-gray">
+          <section id="about" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
@@ -270,7 +293,7 @@ const Index = () => {
                   
                   <div>
                     <p className="text-gray-300 mb-6 leading-relaxed">
-                      A dynamic digital marketing professional with over 7 years of experience in social media management, content creation, and web development. Passionate about creating impactful digital strategies that drive engagement and growth for businesses and educational institutions.
+                      A dynamic digital marketing professional with over 9 years of experience in social media management, content creation, and web development. Passionate about creating impactful digital strategies that drive engagement and growth for businesses and educational institutions.
                     </p>
                     
                     <p className="text-gray-300 leading-relaxed">
@@ -283,7 +306,7 @@ const Index = () => {
           </section>
           
           {/* Skills Section */}
-          <section id="skills" className="py-24 relative bg-portfolio-dark-gray">
+          <section id="skills" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
                 My <span className="text-portfolio-light-purple">Skills</span>
@@ -296,7 +319,7 @@ const Index = () => {
           </section>
           
           {/* Experience Section */}
-          <section id="experience" className="py-24 relative bg-gradient-to-b from-portfolio-dark-gray to-portfolio-dark-purple">
+          <section id="experience" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
                 Work <span className="text-portfolio-light-purple">Experience</span>
@@ -309,7 +332,7 @@ const Index = () => {
           </section>
           
           {/* Projects Section */}
-          <section id="projects" className="py-24 relative bg-portfolio-dark-purple">
+          <section id="projects" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
                 Featured <span className="text-portfolio-light-purple">Projects</span>
@@ -326,7 +349,7 @@ const Index = () => {
           </section>
           
           {/* Certifications Section */}
-          <section id="certifications" className="py-24 relative bg-gradient-to-b from-portfolio-dark-purple to-portfolio-dark-gray">
+          <section id="certifications" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
                 <span className="text-portfolio-light-purple">Certifications</span>
@@ -343,7 +366,7 @@ const Index = () => {
           </section>
           
           {/* Contact Section */}
-          <section id="contact" className="py-24 relative bg-portfolio-dark-gray">
+          <section id="contact" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
                 Get In <span className="text-portfolio-light-purple">Touch</span>
@@ -356,20 +379,20 @@ const Index = () => {
           </section>
           
           {/* Footer */}
-          <footer className="py-8 bg-portfolio-dark-purple border-t border-portfolio-purple/20">
+          <footer className="py-8 bg-black border-t border-portfolio-purple/20">
             <div className="container mx-auto px-4 text-center">
               <div className="animate-rotate-slow inline-block mb-4">
                 <div className="text-2xl font-bold text-portfolio-light-purple">HA</div>
               </div>
               
               <p className="text-gray-400 text-sm">
-                © 2025 Hanan Asif. All Rights Reserved.
+                © {new Date().getFullYear()} Hanan Asif. All Rights Reserved.
               </p>
             </div>
           </footer>
         </>
       )}
-    </>
+    </div>
   );
 };
 

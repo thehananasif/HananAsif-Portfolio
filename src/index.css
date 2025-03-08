@@ -36,7 +36,6 @@
 
     --radius: 0.5rem;
     
-    /* Royal Purple for headings */
     --royal-purple: #7851A9;
   }
 }
@@ -64,7 +63,6 @@
   }
 }
 
-/* Custom classes */
 @layer components {
   .card-3d {
     @apply rounded-lg bg-portfolio-purple/10 backdrop-blur-sm border border-portfolio-purple/20 shadow-xl transition-all duration-300 hover:shadow-portfolio-purple/10 hover:scale-105 overflow-hidden;
@@ -117,7 +115,6 @@
     scrollbar-width: none;
   }
   
-  /* Modern button styling */
   .button-modern {
     @apply bg-[#7851A9] text-white px-8 py-3 rounded-lg transition-all duration-300 font-medium;
     position: relative;
@@ -133,34 +130,41 @@
     @apply transform scale-95;
   }
   
-  /* Dual layer text effect for main heading */
-  .dual-layer-text {
-    position: relative;
-    display: inline-block;
+  .stacked-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 0.05em;
+    line-height: 0.9;
   }
   
-  .dual-layer-text .text-back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+  .name-top {
     background: linear-gradient(to bottom, #9b87f5, #6E59A5);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    opacity: 0.8;
-    filter: blur(3px);
-    transform: translateY(2px) translateX(2px);
+    font-size: 5rem;
+    letter-spacing: 0.02em;
   }
   
-  .dual-layer-text .text-front {
-    position: relative;
-    z-index: 2;
+  .name-bottom {
     color: white;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    font-size: 5rem;
+    letter-spacing: 0.02em;
+  }
+  
+  @media (min-width: 768px) {
+    .name-top, .name-bottom {
+      font-size: 7rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .name-top, .name-bottom {
+      font-size: 9rem;
+    }
   }
   
   .subtitle-creative {
@@ -173,20 +177,17 @@
     margin-bottom: 0.5rem;
   }
   
-  /* Main heading style */
   .main-heading {
     @apply text-6xl md:text-7xl font-bold;
     color: #7851A9;
   }
   
-  /* Section heading style */
   .section-heading {
     @apply text-3xl md:text-4xl font-bold mb-12 text-center;
     color: #7851A9;
   }
 }
 
-/* Animations */
 @keyframes rotate-slow {
   from {
     transform: rotate(0deg);
@@ -200,7 +201,6 @@
   animation: rotate-slow 10s linear infinite;
 }
 
-/* Micro-interactions */
 @keyframes pulse-subtle {
   0%, 100% {
     opacity: 1;

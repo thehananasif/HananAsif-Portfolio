@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { Briefcase, Code, Mail, UserRound, Award, Laptop, Globe, Camera } from 'lucide-react';
 import Navbar from '@/components/Navbar';
@@ -250,13 +251,13 @@ const Index = () => {
                 A Creative
               </div>
               
-              <div className="dual-layer-text opacity-0 animate-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
-                <div className="text-back text-7xl md:text-8xl lg:text-9xl">HANAN ASIF</div>
-                <div className="text-front text-7xl md:text-8xl lg:text-9xl">HANAN ASIF</div>
+              <div className="stacked-name opacity-0 animate-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
+                <div className="name-top">HANAN</div>
+                <div className="name-bottom">ASIF</div>
               </div>
               
               <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
-                <h2 className="text-xl md:text-2xl text-white font-light mb-8 mt-4">
+                <h2 className="text-xl md:text-2xl text-white font-light mb-8 mt-6">
                   Digital Strategist | Social Media Expert | Web Specialist
                 </h2>
               </div>

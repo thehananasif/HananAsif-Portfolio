@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Briefcase, Code, Mail, UserRound, Award, Laptop, Globe, Camera } from 'lucide-react';
 import Navbar from '@/components/Navbar';
@@ -247,17 +246,22 @@ const Index = () => {
             </div>
             
             <div className="container mx-auto px-4 z-10 text-center">
-              <h1 className="main-heading mb-6">
-                Hanan Asif
-              </h1>
+              <div className="subtitle-creative opacity-0 animate-fade-in" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
+                A Creative
+              </div>
               
-              <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
-                <h2 className="text-xl md:text-2xl text-white font-light mb-8">
+              <div className="dual-layer-text opacity-0 animate-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
+                <div className="text-back text-7xl md:text-8xl lg:text-9xl">HANAN ASIF</div>
+                <div className="text-front text-7xl md:text-8xl lg:text-9xl">HANAN ASIF</div>
+              </div>
+              
+              <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
+                <h2 className="text-xl md:text-2xl text-white font-light mb-8 mt-4">
                   Digital Strategist | Social Media Expert | Web Specialist
                 </h2>
               </div>
               
-              <div className="opacity-0 animate-fade-in" style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
+              <div className="opacity-0 animate-fade-in" style={{animationDelay: '1.1s', animationFillMode: 'forwards'}}>
                 <button 
                   onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                   className="button-modern"

@@ -231,7 +231,7 @@ const Index = () => {
       
       {/* Scroll Progress Indicator */}
       <div 
-        className="fixed top-0 left-0 h-1 bg-[#7851A9] z-50 transition-all duration-300"
+        className="fixed top-0 left-0 h-1 bg-portfolio-light-purple z-50 transition-all duration-300"
         style={{ width: `${scrollProgress * 100}%` }}
       />
       
@@ -243,13 +243,19 @@ const Index = () => {
           {/* Welcome Section */}
           <section id="welcome" className="min-h-screen relative flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 z-0">
+              {/* Background video would go here */}
               <div className="absolute inset-0 bg-black bg-opacity-90"></div>
             </div>
             
             <div className="container mx-auto px-4 z-10 text-center">
-              <h1 className="main-heading mb-6">
-                Hanan Asif
-              </h1>
+              <FloatingText 
+                text=""
+                className="mb-8"
+              >
+                <h1 className="text-5xl md:text-7xl font-bold text-white mb-2">
+                  <span className="text-portfolio-light-purple">Hanan</span> Asif
+                </h1>
+              </FloatingText>
               
               <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
                 <h2 className="text-xl md:text-2xl text-white font-light mb-8">
@@ -260,7 +266,7 @@ const Index = () => {
               <div className="opacity-0 animate-fade-in" style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
                 <button 
                   onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="button-modern"
+                  className="bg-portfolio-purple hover:bg-portfolio-light-purple text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 font-medium"
                 >
                   Explore My Work
                 </button>
@@ -272,15 +278,15 @@ const Index = () => {
           <section id="about" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
-                <h2 className="section-heading">
-                  About Me
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                  About <span className="text-portfolio-light-purple">Me</span>
                 </h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                   <ThreeDCard className="bg-portfolio-dark-gray/60 rounded-xl overflow-hidden border border-portfolio-purple/20">
                     <div className="p-6 flex items-center justify-center">
                       <div className="w-48 h-48 rounded-full bg-portfolio-purple/20 flex items-center justify-center">
-                        <UserRound className="w-24 h-24 text-[#7851A9]" />
+                        <UserRound className="w-24 h-24 text-portfolio-light-purple/70" />
                       </div>
                     </div>
                   </ThreeDCard>
@@ -302,8 +308,8 @@ const Index = () => {
           {/* Skills Section */}
           <section id="skills" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
-              <h2 className="section-heading">
-                My Skills
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                My <span className="text-portfolio-light-purple">Skills</span>
               </h2>
               
               <div className="max-w-6xl mx-auto">
@@ -315,8 +321,8 @@ const Index = () => {
           {/* Experience Section */}
           <section id="experience" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
-              <h2 className="section-heading">
-                Work Experience
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                Work <span className="text-portfolio-light-purple">Experience</span>
               </h2>
               
               <div className="max-w-5xl mx-auto">
@@ -328,8 +334,8 @@ const Index = () => {
           {/* Projects Section */}
           <section id="projects" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
-              <h2 className="section-heading">
-                Featured Projects
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                Featured <span className="text-portfolio-light-purple">Projects</span>
               </h2>
               
               <div className="max-w-6xl mx-auto">
@@ -345,8 +351,8 @@ const Index = () => {
           {/* Certifications Section */}
           <section id="certifications" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
-              <h2 className="section-heading">
-                Certifications
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                <span className="text-portfolio-light-purple">Certifications</span>
               </h2>
               
               <div className="max-w-6xl mx-auto">
@@ -362,8 +368,8 @@ const Index = () => {
           {/* Contact Section */}
           <section id="contact" className="py-24 relative bg-black">
             <div className="container mx-auto px-4">
-              <h2 className="section-heading">
-                Get In Touch
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
+                Get In <span className="text-portfolio-light-purple">Touch</span>
               </h2>
               
               <div className="max-w-6xl mx-auto">
@@ -376,7 +382,7 @@ const Index = () => {
           <footer className="py-8 bg-black border-t border-portfolio-purple/20">
             <div className="container mx-auto px-4 text-center">
               <div className="animate-rotate-slow inline-block mb-4">
-                <div className="text-2xl font-bold text-[#7851A9]">HA</div>
+                <div className="text-2xl font-bold text-portfolio-light-purple">HA</div>
               </div>
               
               <p className="text-gray-400 text-sm">

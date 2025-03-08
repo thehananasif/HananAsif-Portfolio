@@ -17,7 +17,7 @@ const FloatingText: React.FC<FloatingTextProps> = ({
 }) => {
   const getAnimationDuration = () => {
     switch (speed) {
-      case 'slow': return 'animation-duration: 4s;';
+      case 'slow': return 'animation-duration: 5s;';
       case 'fast': return 'animation-duration: 2s;';
       default: return 'animation-duration: 3s;';
     }
@@ -29,7 +29,7 @@ const FloatingText: React.FC<FloatingTextProps> = ({
         "animate-float",
         className
       )}
-      style={{ animationDelay: `${Math.random() * 1}s` }}
+      style={{ animationDelay: `${Math.random() * 2}s` }}
     >
       {text && <span style={{ display: 'inline-block' }}>{text}</span>}
       {children}

@@ -36,9 +36,6 @@
     --ring: 260 50% 55%;
 
     --radius: 0.5rem;
-    
-    /* Royal Purple for headings */
-    --royal-purple: #7851A9;
   }
 }
 
@@ -52,16 +49,12 @@
   }
 
   body {
-    @apply bg-black text-foreground;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply bg-black text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", system-ui, sans-serif;
-    @apply font-bold text-[#7851A9];
-    letter-spacing: -0.02em;
+    @apply font-heading font-bold;
   }
 }
 
@@ -116,34 +109,6 @@
   .scrollbar-hidden {
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
-  
-  /* Modern button styling */
-  .button-modern {
-    @apply bg-[#7851A9] text-white px-8 py-3 rounded-lg transition-all duration-300 font-medium;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .button-modern:hover {
-    @apply transform scale-105;
-    background-color: #8A65BC;
-  }
-  
-  .button-modern:active {
-    @apply transform scale-95;
-  }
-  
-  /* Main heading style */
-  .main-heading {
-    @apply text-6xl md:text-7xl font-bold;
-    color: #7851A9;
-  }
-  
-  /* Section heading style */
-  .section-heading {
-    @apply text-3xl md:text-4xl font-bold mb-12 text-center;
-    color: #7851A9;
   }
 }
 

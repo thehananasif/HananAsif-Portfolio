@@ -247,22 +247,17 @@ const Index = () => {
             </div>
             
             <div className="container mx-auto px-4 z-10 text-center">
-              <div className="subtitle-creative opacity-0 animate-fade-in" style={{animationDelay: '0.2s', animationFillMode: 'forwards'}}>
-                A Creative
-              </div>
+              <h1 className="main-heading mb-6">
+                Hanan Asif
+              </h1>
               
-              <div className="stacked-name opacity-0 animate-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
-                <div className="name-top">HANAN</div>
-                <div className="name-bottom">ASIF</div>
-              </div>
-              
-              <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.8s', animationFillMode: 'forwards'}}>
-                <h2 className="text-xl md:text-2xl text-white font-light mb-8 mt-6">
+              <div className="opacity-0 animate-fade-in" style={{animationDelay: '0.5s', animationFillMode: 'forwards'}}>
+                <h2 className="text-xl md:text-2xl text-white font-light mb-8">
                   Digital Strategist | Social Media Expert | Web Specialist
                 </h2>
               </div>
               
-              <div className="opacity-0 animate-fade-in" style={{animationDelay: '1.1s', animationFillMode: 'forwards'}}>
+              <div className="opacity-0 animate-fade-in" style={{animationDelay: '1s', animationFillMode: 'forwards'}}>
                 <button 
                   onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                   className="button-modern"
